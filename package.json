@@ -1,0 +1,13 @@
+{
+    "name": "cloud-cli-fixture",
+    "private": true,
+    "main": "index.ts",
+    "devDependencies": {
+        "@types/node": "^20"
+    },
+    "dependencies": {
+        "@pulumi/pulumi": "^3.0.0",
+        "@pulumi/aws": "^6.0.0",
+        "@pulumi/random": "^4.0.0"
+    }
+}

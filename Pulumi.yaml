@@ -1,0 +1,7 @@
+name: cloud-cli-fixture
+runtime: nodejs
+description: |
+  Long-lived fixture stack for exercising Pulumi Cloud CLI commands against
+  api.pulumi-staging.io. Driven by Pulumi Deployments. Creates a small set of
+  AWS resources, including one intentionally policy-violating bucket so that
+  `pulumi policy issue *` has something to list.
