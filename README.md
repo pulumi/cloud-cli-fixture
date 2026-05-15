@@ -19,6 +19,13 @@ pack is published and attached, policy issues).
 All resources are tiny and safe in `aws-dev-sandbox` (account `616138583583`).
 Re-running `pulumi up` is idempotent; `pulumi destroy` cleans everything up.
 
+## Repository layout
+
+- `./` — the Pulumi program above.
+- `policy-pack/` — companion policy pack (`cloud-cli-fixture-pack`) that flags
+  the non-compliant bucket. Published with `pulumi policy publish`; see its
+  [README](policy-pack/README.md).
+
 ## Stack configuration
 
 The stack expects AWS credentials via the ESC environment
@@ -32,13 +39,10 @@ pulumi config env add cloud-cli-fixture/env
 
 ## Pulumi Deployments
 
-The stack is wired up to Pulumi Deployments so that:
-
-- Pushes to `main` trigger a `pulumi up`.
-- The Deployments runner uses the agent pool `cloud-cli-fixture-pool` on
-  staging.
-- A scheduled refresh keeps the stack fresh (drift entries get generated
-  if the live state diverges).
+The stack runs on Pulumi-hosted Deployments. Push-triggered deploys are
+currently disabled due to a staging GitHub-App integration bug; a daily
+drift-detect schedule (09:00 UTC, auto-remediate) keeps the deployment
+history and drift entries fresh.
 
 Pulumi Cloud picks this configuration up from the stack's settings page on
 staging.

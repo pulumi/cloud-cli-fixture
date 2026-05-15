@@ -1,0 +1,16 @@
+{
+    "name": "cloud-cli-fixture-pack",
+    "version": "0.0.2",
+    "main": "bin/index.js",
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "@types/node": "^20"
+    },
+    "dependencies": {
+        "@pulumi/policy": "^1.0.0",
+        "@pulumi/aws": "^6.0.0"
+    }
+}

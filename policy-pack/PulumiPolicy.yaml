@@ -1,0 +1,2 @@
+runtime: nodejs
+description: Cloud CLI fixture policy pack — flags S3 buckets that lack versioning or encryption.
